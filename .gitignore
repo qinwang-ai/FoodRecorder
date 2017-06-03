@@ -2,10 +2,6 @@
 #
 .DS_Store
 
-## react-native
-android/
-ios/
-
 # Xcode
 #
 build/
