@@ -5,28 +5,58 @@
  */
 
 import React, { Component } from 'react';
+import TabNavigator from 'react-native-tab-navigator';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {
   AppRegistry,
   StyleSheet,
+  Button,
+  Alert,
+  FlatList,
   Text,
   View
 } from 'react-native';
 
+const onButtonPress = () => {
+  Alert.alert('Hehe');
+}
+
 export default class FoodRecorder extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+      <TabNavigator>
+        <TabNavigator.Item
+          renderIcon={() => 
+              <Icon name={'md-create'} />
+          }
+          title="食记"
+        >
+        </TabNavigator.Item>
+
+        <TabNavigator.Item
+          renderIcon={() => 
+              <Icon name={'md-analytics'} />
+          }
+          title="分析"
+        >
+        </TabNavigator.Item>
+
+        <TabNavigator.Item
+          renderIcon={() => 
+              <Icon name={'md-cube'} />
+          }
+          title="食库"
+        >
+        </TabNavigator.Item>
+
+        <TabNavigator.Item
+          renderIcon={() => 
+              <Icon name={'md-person'} />
+          }
+          title="我的"
+        >
+        </TabNavigator.Item>
+      </TabNavigator>
     );
   }
 }
